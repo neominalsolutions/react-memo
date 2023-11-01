@@ -8,9 +8,10 @@ function App() {
     <div className="App">
       <nav>
         {/* spa routing için kullanılan bir component a href kullanmıyoruz */}
+        {' '}
         <Link to="/useEffect" >Use Effect Sample</Link>
         {' '}
-        <Link to="/" >Home Page</Link>
+        <Link to="reactMemo" >React Memo Sample</Link>
       </nav>
       <main>
         {/* sayfaların App component doma girdiğinde yukarıdaki linke göre sayfaların outlet olarak işaretlenmiş yere girişini sağlar. */}

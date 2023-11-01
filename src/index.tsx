@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import UseEffectSample from './pages/useEffect/UseEffectSample';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ReactMemoSample from './pages/reactMemo/ReactMemoSample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,6 +21,7 @@ root.render(
         {/* nested route yapısı */}
         <Route path='/' Component={App}>
           <Route path='/useEffect' Component={UseEffectSample}></Route>
+          <Route path='/reactMemo' Component={ReactMemoSample}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

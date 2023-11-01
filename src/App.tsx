@@ -16,6 +16,11 @@ function App() {
         <Link to="/useRef" >UseRef Sample</Link>
         {' '}
         <Link to="/useMemo">Use Memo Sample</Link>
+        {' '}
+        {/* sayfa yenilenerek yönlendirme yapıyor. */}
+         <Link to="/useLayoutEffect">Use Layout Effect Sample</Link>
+         {' '}
+        <a href='/useLayoutEffect'> Href</a>
       </nav>
       <main>
         {/* sayfaların App component doma girdiğinde yukarıdaki linke göre sayfaların outlet olarak işaretlenmiş yere girişini sağlar. */}

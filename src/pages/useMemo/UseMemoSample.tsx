@@ -16,7 +16,6 @@ const factorielFunction = (num:number) => { // expensiveFunction
   }
   return result;
  } 
-
  // useMemo kullanılmadan önceki durum
 //  const factoriel:number = factorielFunction(number);
 // değişken değerlerimizi memoisation yapmak için useMemo hook'unu kullanıyoruz

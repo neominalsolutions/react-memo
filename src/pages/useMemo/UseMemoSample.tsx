@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 function UseMemoSample() {
 
@@ -10,14 +10,19 @@ const factorielFunction = (num:number) => { // expensiveFunction
   console.log('calculating....');
   let result = 1;
 
-  for (let index = 2; index < num; index++) {
+  for (let index = 2; index <= num; index++) {
     result *= index;
     
   }
   return result;
  } 
 
- const factoriel:number = factorielFunction(number);
+ // useMemo kullanılmadan önceki durum
+//  const factoriel:number = factorielFunction(number);
+// değişken değerlerimizi memoisation yapmak için useMemo hook'unu kullanıyoruz
+
+// sadece number state değişimi olursa memoisation durumunu boz aksi takdirde tekrar bir hesaplama yapma.
+const factoriel:number = useMemo(() => factorielFunction(number),[number]);
 
  const onInputChange= (event:any) => {
    if(!isNaN(event.target.value)){
@@ -33,10 +38,12 @@ const factorielFunction = (num:number) => { // expensiveFunction
         Faktoriyel Sonuç : {factoriel}
       </span>
       <br></br>
-      <span>
+     
+      <button onClick={() => {setRandom(Math.round(Math.random() * 100))}}>Generate Random Number</button>
+      <br></br>
+       <span>
         Random Değer :{random}
       </span>
-      <button onClick={() => {setRandom(Math.round(Math.random() * 100))}}>Generate Random Number</button>
     </>
   )
 }

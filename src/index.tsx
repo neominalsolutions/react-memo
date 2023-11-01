@@ -11,7 +11,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // sadece development modda çalışır.
+  // <React.StrictMode>
     <BrowserRouter>
       <Routes>
         {/* /about /contact */}
@@ -22,7 +23,7 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

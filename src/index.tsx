@@ -4,12 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import UseEffectSample from './pages/useEffect/UseEffectSample';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        {/* /about /contact */}
+        {/* app componenti outlet ile sarıp layout gibi kullanıcaz */}
+        {/* nested route yapısı */}
+        <Route path='/' Component={App}>
+          <Route path='/useEffect' Component={UseEffectSample}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

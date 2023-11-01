@@ -12,6 +12,8 @@ function App() {
         <Link to="/useEffect" >Use Effect Sample</Link>
         {' '}
         <Link to="/reactMemo" >React Memo Sample</Link>
+        {' '}
+        <Link to="/useRef" >UseRef Sample</Link>
       </nav>
       <main>
         {/* sayfaların App component doma girdiğinde yukarıdaki linke göre sayfaların outlet olarak işaretlenmiş yere girişini sağlar. */}

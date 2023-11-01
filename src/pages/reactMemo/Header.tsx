@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component, memo } from 'react'
 
 type HeaderProps = {
     title?:string; // optional
@@ -16,9 +16,16 @@ function Header(props:HeaderProps) {
   )
 }
 
-export default Header
+// memo ile sarmalanmış component sadece componentin içerisinde props değerinin değişiminde tekrar render olur.
+// parent component üzerinden bir state değişiminde tekrar render almaz. biz bu olaya memoisation diyoruz.
+
+export default memo(Header);
 
 // legalcy tanım şekli 2
 function Header2({title,name}:HeaderProps) {
 
 }
+
+
+
+

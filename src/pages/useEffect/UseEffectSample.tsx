@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 let interval = setInterval(() => {
-      console.log('interval');
+      // console.log('interval');
     }, 1000); // 1 saniyede 1 saysın
 
 function UseEffectSample() {

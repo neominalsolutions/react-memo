@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import UseEffectSample from './pages/useEffect/UseEffectSample';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ReactMemoSample from './pages/reactMemo/ReactMemoSample';
+import UseRefSample from './pages/useRef/UseRefSample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,6 +23,7 @@ root.render(
         <Route path='/' Component={App}>
           <Route path='/useEffect' Component={UseEffectSample}></Route>
           <Route path='/reactMemo' Component={ReactMemoSample}></Route>
+          <Route path='/useRef' Component={UseRefSample}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

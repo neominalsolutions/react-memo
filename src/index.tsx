@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -10,6 +10,14 @@ import ReactMemoSample from './pages/reactMemo/ReactMemoSample';
 import UseRefSample from './pages/useRef/UseRefSample';
 import UseMemoSample from './pages/useMemo/UseMemoSample';
 import UseLayoutEffectSample from './pages/useLayoutEffect/UseLayoutEffectSample';
+import UseCallbackSample from './pages/useCallback/UseCallbackSample';
+
+
+const UseEffectSampleLazy = React.lazy(() => import('./pages/useEffect/UseEffectSample'));
+
+// useRef Module haline gelip webpack artık ayrı bir js dosyasına bölecek ve sadece ilgili route istedeğinde componentlerin yüklenemsi sağlanacak.
+// code-splitting tekniği diyoruz. 
+const UseRefSampleLazy = React.lazy(() => import('./pages/useRef/UseRefSample'));
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,15 +30,17 @@ const logOut = () => {
 root.render(
   // sadece development modda çalışır.
   // <React.StrictMode>
+  <Suspense fallback={<>... loading </>}>
     <BrowserRouter>
       <Routes>
         {/* /about /contact */}
         {/* app componenti outlet ile sarıp layout gibi kullanıcaz */}
         {/* nested route yapısı */}
         <Route path='/' Component={App}>
-          <Route path='/useEffect' Component={UseEffectSample}></Route>
+          {/* React Lazy */}
+          <Route path='/useEffect' Component={UseEffectSampleLazy}></Route>
           <Route path='/reactMemo' Component={ReactMemoSample}></Route>
-          <Route path='/useRef' Component={UseRefSample}></Route>
+          <Route path='/useRef' Component={UseRefSampleLazy}></Route>
           <Route path='/useMemo' Component={UseMemoSample}></Route>
           <Route path='/useLayoutEffect' element={<>
             <p>Element</p>
@@ -40,8 +50,10 @@ root.render(
             <Route path='/logout' action={() => logOut}></Route>
 
           </Route>
+          <Route path='/useCallback' Component={UseCallbackSample}></Route>
       </Routes>
     </BrowserRouter>
+  </Suspense>
   // </React.StrictMode>
 );
 

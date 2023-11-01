@@ -20,7 +20,10 @@ function App() {
         {/* sayfa yenilenerek yönlendirme yapıyor. */}
          <Link to="/useLayoutEffect">Use Layout Effect Sample</Link>
          {' '}
+          <Link to="/useCallback">Use Callback Sample</Link>
         <a href='/useLayoutEffect'> Href</a>
+             {' '}
+         <Link to="/logout">LogOut</Link>
       </nav>
       <main>
         {/* sayfaların App component doma girdiğinde yukarıdaki linke göre sayfaların outlet olarak işaretlenmiş yere girişini sağlar. */}

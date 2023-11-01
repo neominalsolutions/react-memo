@@ -11,7 +11,7 @@ function UseLayoutEffectSample() {
     let data = await response.json();
 
     let response2 = await fetch('https://jsonplaceholder.typicode.com/users');
-    let data2 = await response.json();
+    let data2 = await response2.json();
 
     data[0].coupouns = [...data2];
     // user: {name:'ali',couponse:[]}
